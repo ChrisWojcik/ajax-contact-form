@@ -13,7 +13,8 @@ This project has the following functionality:
 * I've added some basic exception handling, but it could probably be better.
 
 ## How To Use
-1. Open `includes/config.php` and set your configuration options.
+1. Open `includes/config.php` and set your configuration options. I **STRONGLY** recommend 
+that you move the includes folder to a more secure location.
 2. The default options assume a gmail account, check with your hosting provider if 
 you need the details for a different email server.
 3. You may receive an email from gmail asking you to confirm that the access was 
