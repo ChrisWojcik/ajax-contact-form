@@ -1,19 +1,18 @@
 $(function() {
     
     // Form validation via plugin
-    var submitMessage  = $('#submit-message').find('span'),
-        loading        = $('#loading');
+    var submitMessage     = $('#submit-message'),
+        messageContainer  = submitMessage.find('span'),
+        loading           = $('#loading');
         
     function showSuccess(message) {
-        submitMessage.text(message)
-        submitMessage.addClass('success');
-        submitMessage.removeClass('hidden');
+        messageContainer.text(message)
+        messageContainer.attr('class', 'success');
     }
     
     function showFailure(message) {
-        submitMessage.text(message)
-        submitMessage.addClass('failure');
-        submitMessage.removeClass('hidden');
+        messageContainer.text(message)
+        messageContainer.attr('class', 'failure');
     }
         
     $('#contact-form').validate({        
@@ -31,7 +30,7 @@ $(function() {
                 },
                 statusCode: {
                     500: function() {
-                        showFailure("We're sorry, there was a problem sumitting your email.");                        
+                        showFailure("We're sorry, your email could not be sent. Please try again later.");
                         loading.hide();
                     }
                 }
