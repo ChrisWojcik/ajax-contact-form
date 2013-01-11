@@ -28,11 +28,9 @@ $(function() {
                     form.reset();
                     loading.hide();
                 },
-                statusCode: {
-                    500: function() {
-                        showFailure("We're sorry, your email could not be sent. Please try again later.");
-                        loading.hide();
-                    }
+                error: function() {
+                    showFailure("We're sorry, your email could not be sent. Please try again later.");
+                    loading.hide();
                 }
             };
             $(form).ajaxSubmit(options);
