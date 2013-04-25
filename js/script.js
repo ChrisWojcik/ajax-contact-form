@@ -5,15 +5,11 @@ $(function() {
         messageContainer  = submitMessage.find('span'),
         loading           = $('#loading');
         
-    function showSuccess(message) {
+    function showMessage(message, classAttr) {
         messageContainer.text(message)
-        messageContainer.attr('class', 'success');
+        messageContainer.attr('class', classAttr);
     }
     
-    function showFailure(message) {
-        messageContainer.text(message)
-        messageContainer.attr('class', 'failure');
-    }
         
     $('#contact-form').validate({        
                
@@ -24,12 +20,12 @@ $(function() {
                     loading.show();
                 },
                 success: function() {
-                    showSuccess('Thank you! Your email has been submitted.');
+                    showMessage('Thank you! Your email has been submitted.', 'success');
                     form.reset();
                     loading.hide();
                 },
                 error: function() {
-                    showFailure("We're sorry, your email could not be sent. Please try again later.");
+                    showMessage('We\'re sorry, your email could not be sent. Please try again later.', 'failure');
                     loading.hide();
                 }
             };
