@@ -32,7 +32,7 @@ $(function() {
             $(form).ajaxSubmit(options);
         },
         invalidHandler: function() {
-            showFailure('There were some problems with your submission.');
+            showMessage('There were some problems with your submission.', 'failure');
         }
     });
 });
